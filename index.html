@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anndaan | Smart Food Waste Reduction</title>
+    <meta name="description" content="Connecting food donors with NGOs using AI to minimize food waste and maximize impact.">
+    
+    <!-- Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/toast.css">
+</head>
+<body>
+    <!-- Background Elements for Glassmorphism -->
+    <div class="bg-blur shape-1"></div>
+    <div class="bg-blur shape-2"></div>
+    <div class="bg-blur shape-3"></div>
+
+    <nav class="navbar main-nav">
+        <div class="nav-container">
+            <div class="logo" onclick="app.navigate('home')">
+                <i class="ph-fill ph-leaf"></i>
+                <span>Anndaan</span>
+            </div>
+            <div class="nav-links">
+                <button class="nav-btn active" data-target="home" data-i18n="navHome">Home</button>
+                <button class="nav-btn" data-target="feed" data-i18n="navFeed">Live Feed</button>
+                <button class="nav-btn" data-target="donor-dashboard" data-i18n="navDonor">Donor Hub</button>
+                <button class="nav-btn" data-target="ngo-dashboard" data-i18n="navNGO">NGO View</button>
+                <button class="nav-btn" data-target="volunteer-dashboard" data-i18n="navVol">Volunteer Hub</button>
+            </div>
+            <div class="nav-actions">
+                <button class="btn btn-outline" style="border-radius: 50%; width: 42px; height: 42px; padding: 0;" onclick="app.toggleTheme()">
+                    <i class="ph ph-moon" id="theme-icon"></i>
+                </button>
+                <div class="lang-dropdown-wrapper">
+                    <button class="btn btn-outline" onclick="app.toggleLangMenu()">
+                        <i class="ph ph-translate"></i> <span id="current-lang">EN</span>
+                    </button>
+                    <div class="lang-dropdown" id="lang-menu">
+                        <button onclick="app.selectLang('EN', 'English')">English (EN)</button>
+                        <button onclick="app.selectLang('HI', 'हिन्दी')">हिन्दी (HI)</button>
+                        <button onclick="app.selectLang('MR', 'मराठी')">मराठी (MR)</button>
+                        <button onclick="app.selectLang('GU', 'ગુજરાતી')">ગુજરાતી (GU)</button>
+                        <button onclick="app.selectLang('TA', 'தமிழ்')">தமிழ் (TA)</button>
+                        <button onclick="app.selectLang('TE', 'తెలుగు')">తెలుగు (TE)</button>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="app.navigate('donor-dashboard')" data-i18n="btnDonate">
+                    Donate Food
+                </button>
+                <button class="mobile-menu-btn">
+                    <i class="ph ph-list"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main id="app-content">
+        <!-- Views will be injected or toggled here -->
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="ph-fill ph-leaf"></i>
+                    <span>Anndaan</span>
+                </div>
+                <p>Innovating for a zero-waste future.</p>
+            </div>
+            <div class="footer-stats">
+                <div class="f-stat">
+                    <span class="value">12.5K</span>
+                    <span class="label">Meals Saved</span>
+                </div>
+                <div class="f-stat">
+                    <span class="value">4.2T</span>
+                    <span class="label">CO₂ Reduced</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
